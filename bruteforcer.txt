@@ -1,0 +1,12 @@
+#!/bin/bash
+#This Script Is A Brute Forcer
+echo "Backend Assignment. A Simple Web Path BruteForcer"
+echo "Using Bash Shell Scripting"
+url=$1
+while IFS= read -r line
+do
+    case curl -o /dev/null -s -w "%{http_code}\n" $1/$line in
+            $@ )
+                echo curl -o /dev/null -s -w "%{http_code}\n" $1/$line
+    esac         
+done < wordlist.txt
